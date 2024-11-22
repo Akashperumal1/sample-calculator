@@ -1,0 +1,132 @@
+/* Full-screen calculator container */
+.calculator {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Light background */
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Calculator inner box */
+  .calculator-inner {
+    width: 90%;
+    max-width: 400px; /* Restrict max width for large screens */
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Display section */
+  .display {
+    height: 80px;
+    background: #222;
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #ccc;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* Buttons container */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styling */
+  button {
+    height: 60px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background: #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  button:active {
+    background: #ccc;
+    transform: scale(0.95);
+  }
+  
+  /* Special buttons (operators, clear) */
+  button.clear {
+    grid-column: span 4;
+    background: #ff4d4d;
+    color: white;
+  }
+  
+  button.clear:hover {
+    background: #ff3333;
+  }
+  
+  button.operator {
+    background: #f9c74f;
+    color: white;
+  }
+  
+  button.operator:hover {
+    background: #f9a826;
+  }
+  
+  /* Responsive Design for Tablets */
+  @media (max-width: 768px) {
+    .display {
+      font-size: 2rem;
+      height: 70px;
+    }
+  
+    .buttons {
+      gap: 8px;
+    }
+  
+    button {
+      font-size: 1.2rem;
+      height: 50px;
+    }
+  }
+  
+  /* Responsive Design for Mobile Devices */
+  @media (max-width: 480px) {
+    .display {
+      font-size: 1.8rem; /* Smaller font size */
+      height: 60px; /* Reduced height for smaller devices */
+      padding: 8px; /* Compact padding */
+    }
+  
+    .buttons {
+      gap: 5px; /* Reduced gap between buttons */
+    }
+  
+    button {
+      font-size: 1rem;
+      height: 45px;
+    }
+  
+    button.clear {
+      height: 50px;
+      font-size: 1.1rem; /* Keep the clear button slightly larger */
+    }
+  }
+  
